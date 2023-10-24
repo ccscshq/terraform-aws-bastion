@@ -11,10 +11,9 @@ module "network" {
 module "bastion_arm64" {
   source = "../.."
 
-  prefix            = "${local.prefix}-arm64"
-  ec2_instance_type = "t4g.micro"
-  ec2_subnet_id     = module.network.private_subnet_ids[0]
-  ec2_vpc_id        = module.network.vpc_id
+  prefix        = "${local.prefix}-arm64"
+  ec2_subnet_id = module.network.private_subnet_ids[0]
+  ec2_vpc_id    = module.network.vpc_id
 }
 
 module "bastion_x86_64" {
